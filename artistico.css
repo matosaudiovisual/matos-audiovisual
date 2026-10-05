@@ -1,0 +1,82 @@
+/* =========================================================
+   TRABALHOS ARTÍSTICOS — grid de cards por artista
+   Usa as variáveis de cor/fonte do style.css.
+   ========================================================= */
+
+.page-header {
+  padding: 56px 24px 40px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.page-header .motion-tag {
+  position: static;
+  display: inline-block;
+  opacity: 1;
+  margin-bottom: 16px;
+}
+
+.page-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  margin: 0;
+  color: var(--text);
+}
+
+.page-sub {
+  margin: 10px 0 0;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-dim);
+}
+
+.artist-grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 56px 24px 96px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.artist-card {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--corner);
+  overflow: hidden;
+  background: var(--surface);
+  text-decoration: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.artist-card:hover {
+  box-shadow: 0 0 0 1px rgba(228, 255, 26, 0.4), 0 16px 32px rgba(228, 255, 26, 0.14);
+}
+
+.artist-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease, opacity 0.5s ease;
+}
+
+.artist-card:hover img {
+  transform: scale(1.06);
+}
+
+@media (max-width: 860px) {
+  .artist-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* camada da foto nova no cruzamento (entra por cima da antiga) */
+.artist-card img.fade-in {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.6s ease;
+}

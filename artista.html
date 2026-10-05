@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trabalho — Matos Audiovisual</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="artista.css">
+</head>
+<body>
+
+  <header class="page-header">
+    <a href="artistico.html" class="motion-tag">&larr; Trabalhos Artísticos</a>
+  </header>
+
+  <main>
+    <section class="artist-masonry" id="artistMasonry">
+      <!-- fotos montadas automaticamente pelo artista.js -->
+    </section>
+  </main>
+
+  <!-- LIGHTBOX com navegação -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Fechar">&times;</button>
+    <span class="lightbox-counter" id="lightboxCounter"></span>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Foto anterior">&#8249;</button>
+    <div class="lightbox-content" id="lightbox-content"></div>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Próxima foto">&#8250;</button>
+  </div>
+
+  <script src="artists-data.js"></script>
+  <script src="artista.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>

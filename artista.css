@@ -1,0 +1,71 @@
+/* =========================================================
+   PÁGINA INDIVIDUAL DO ARTISTA — galeria estilo masonry
+   ========================================================= */
+
+.artist-masonry {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 56px 24px 96px;
+  column-count: 4;
+  column-gap: 16px;
+}
+
+.artist-masonry img {
+  width: 100%;
+  display: block;
+  margin-bottom: 16px;
+  border-radius: var(--corner);
+  break-inside: avoid;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.artist-masonry img:hover {
+  box-shadow: 0 0 0 1px rgba(228, 255, 26, 0.4), 0 12px 28px rgba(228, 255, 26, 0.14);
+}
+
+@media (max-width: 1100px) {
+  .artist-masonry { column-count: 3; }
+}
+
+@media (max-width: 760px) {
+  .artist-masonry { column-count: 2; }
+}
+
+/* ---------- LIGHTBOX com navegação (setas + X) ---------- */
+
+.lightbox-nav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  z-index: 1001;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 2.5rem;
+  cursor: pointer;
+  padding: 0 24px;
+  transition: color 0.2s ease;
+}
+
+.lightbox-nav:hover {
+  color: var(--accent);
+}
+
+.lightbox-prev { left: 0; }
+.lightbox-next { right: 0; }
+
+.lightbox-counter {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1001;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  opacity: 0.75;
+}

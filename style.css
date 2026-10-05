@@ -1,0 +1,341 @@
+/* =========================================================
+   MATOS AUDIOVISUAL — Portfólio
+   Paleta: Mono Contrast — preto + branco + um único acento
+   verde-limão fluorescente (cor de marca-texto). Sem gradientes.
+
+   -> Pra trocar as cores, mexa só nas variáveis abaixo.
+   ========================================================= */
+
+:root {
+  --bg: #000000;        /* preto puro de fundo */
+  --surface: #141414;   /* fundo dos cards antes da imagem carregar */
+  --accent: #E4FF1A;    /* único acento: verde-limão fluorescente (cor de marca-texto) */
+  --text: #FFFFFF;      /* texto principal */
+  --text-dim: #9A9A9A;  /* texto de apoio */
+  --radius: 16px;
+  --corner: 0 0 0 var(--radius); /* arredondado só no canto inferior esquerdo */
+  --header-h: 74px;     /* altura do menu fixo (desktop) */
+  --font-display: 'Bricolage Grotesque', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding-top: var(--header-h); /* espaço pro menu fixo */
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =========================================================
+   RÉGUA TIPOGRÁFICA COMPARTILHADA
+   Texto pequeno de contexto, um foco médio/claro, nada
+   gigante gritando. Use essas classes em páginas novas.
+   ========================================================= */
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: var(--accent);
+  margin: 0;
+}
+
+.heading-md {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  line-height: 1.15;
+  color: var(--text);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.text-sm {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* pequeno indicador "vivo" (bolinha que pisca discretamente) */
+.pulse-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-left: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  vertical-align: middle;
+  animation: neon-flicker 2.6s infinite;
+}
+
+@keyframes neon-flicker {
+  0%, 19%, 21%, 23%, 54%, 56%, 100% { opacity: 1; }
+  20%, 22%, 55% { opacity: 0.25; }
+}
+
+/* =========================================================
+   MENU FIXO (injetado pelo site.js em todas as páginas)
+   ========================================================= */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 24px;
+  background: var(--bg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* WhatsApp: número visível/copiável + botão que abre a conversa */
+.wa {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.wa-number {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--text);
+  white-space: nowrap;
+  user-select: all;          /* um clique seleciona o número inteiro */
+  -webkit-user-select: all;
+  cursor: text;
+}
+
+.wa-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 6px 6px 20px;
+  background: var(--accent);
+  color: #000000;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: 999px;
+  transition: opacity 0.2s ease;
+}
+
+.wa-btn:hover {
+  opacity: 0.88;
+}
+
+.wa-label { white-space: nowrap; }
+
+.wa-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #000000;
+  color: var(--accent);
+  font-size: 1rem;
+}
+
+/* =========================================================
+   HERO / CABEÇALHO DA HOME
+   ========================================================= */
+
+.hero {
+  padding: 32px 24px 24px;
+  text-align: center;
+  background: var(--bg);
+}
+
+.hero .eyebrow {
+  display: block;
+}
+
+.logo {
+  margin: 8px 0 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.logo .accent-pink {
+  color: var(--accent);
+}
+
+.tagline {
+  margin: 10px 0 0;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.dot {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--text-dim);
+}
+
+.tagline-link {
+  color: var(--text-dim);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.tagline-link:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 28px 24px 96px;
+}
+
+/* =========================================================
+   LIGHTBOX (usado na página individual do artista)
+   ========================================================= */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.96);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  z-index: 1000;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox-content {
+  max-width: min(1100px, 92vw);
+  max-height: 88vh;
+}
+
+.lightbox-content img,
+.lightbox-content video {
+  max-width: 100%;
+  max-height: 88vh;
+  border-radius: var(--corner);
+  display: block;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 2.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.lightbox-close:hover {
+  color: var(--accent);
+}
+
+/* ---------- TAG "VOLTAR" (link pequeno) ---------- */
+
+.motion-tag {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text);
+  text-decoration: none;
+  opacity: 0.6;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.motion-tag:hover {
+  opacity: 1;
+  color: var(--accent);
+}
+
+/* ---------- RODAPÉ (injetado pelo site.js) ---------- */
+
+.site-footer {
+  text-align: center;
+  padding: 32px 24px 48px;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--bg);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer .credit {
+  margin-top: 6px;
+  opacity: 0.7;
+}
+
+/* ---------- ACESSIBILIDADE / RESPONSIVO ---------- */
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* celular: menu numa linha só (Home + número + botão compacto) */
+@media (max-width: 640px) {
+  :root { --header-h: 68px; }
+
+  .site-header { padding: 10px 16px; gap: 10px; }
+  .wa { gap: 10px; }
+  .wa-number { font-size: 0.85rem; }
+  .wa-btn { padding: 4px; }
+  .wa-label { display: none; }   /* fica só a setinha ↗ */
+  .hero { padding: 24px 20px 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matos Audiovisual — Portfólio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="artistico.css">
+<link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+  <header class="hero">
+    <p class="eyebrow">São Paulo, Brasil</p>
+    <h1 class="logo">Matos <span class="accent-pink">Audiovisual</span><span class="pulse-dot"></span></h1>
+    <p class="tagline">
+      <a href="artistico.html" class="tagline-link">Artístico</a> <span class="dot"></span>
+      <a href="corporativo.html" class="tagline-link">Corporativo</a> <span class="dot"></span>
+      <a href="motion.html" class="tagline-link">Motion Graphics</a>
+    </p>
+  </header>
+
+  <main>
+    <!-- 4 cards lado a lado (2x2 no celular) — montados pelo home.js -->
+    <section class="home-cards" id="homeCards"></section>
+
+    <!-- Foto de destaque fixa: salve em imagens/home/destaque.jpg
+         (também aceita .jpeg, .png ou .webp). Se não existir, a seção some. -->
+    <section class="home-featured" hidden>
+      <img alt="">
+    </section>
+
+    <!-- Quem sou: edite o texto aqui -->
+    <section class="about">
+      <p class="about-lead"><span class="about-hl">Matos Audiovisual</span> desenvolve projetos audiovisuais para marcas, empresas, artistas e eventos.</p>
+      <p class="about-body">Com atuação em São Paulo, reúne produção, captação, edição, motion graphics e tecnologias de inteligência artificial para transformar ideias em conteúdo visual com identidade e impacto.</p>
+    </section>
+  </main>
+
+  <script src="artists-data.js"></script>
+  <script src="slideshow.js"></script>
+  <script src="home.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>
